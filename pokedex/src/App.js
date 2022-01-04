@@ -1,12 +1,11 @@
-import React from "react"
-import RouteApp from './Router/Router'
+import React from "react";
+import Router from "./Router/Router";
+import GlobalState from "./Context/GlobalState";
 
-const App=()=> {
+export default function App() {
   return (
-    <div >
-      <RouteApp />
-    </div>
-  )
+    <GlobalState>
+      <Router />
+    </GlobalState>
+  );
 }
-
-export default App;
