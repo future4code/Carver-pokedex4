@@ -1,27 +1,23 @@
-import React from "react"
-import { BrowserRouter, Routes, Route, Switch, Link } from "react-router-dom"
-import HomePage from '../Pages/HomePage'
-import Pokedex from '../Pages/Pokedex'
-import DetalhePokemon from '../Pages/DetalhePokemon'
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import DetailsPokemons from "../Pages/DetailsPokemons";
+import HomePage from "../Pages/HomePage";
+import Pokedex from "../Pages/Pokedex";
 
-const RouteApp = () => {
-    return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path = {'/'}>
-                    <HomePage />
-                </Route>
-
-                <Route exact path = {'/pokedex'}>
-                    <Pokedex />
-                </Route>
-
-                <Route exact path = {`/pokemon/`}>
-                    <DetalhePokemon />
-                </Route>
-            </Switch>
-        </BrowserRouter>
-    )
+export default function Router() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={"/"}>
+          <HomePage />
+        </Route>
+        <Route exact path={"/pokedex"}>
+          <Pokedex />
+        </Route>
+        <Route exact path={"/details/:name"}>
+          <DetailsPokemons></DetailsPokemons>
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 }
-
-export default RouteApp
