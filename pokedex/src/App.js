@@ -1,11 +1,12 @@
-import react from "react"
+import React from "react"
+import RouteApp from './Router/Router'
 
 const App=()=> {
   return (
     <div >
-     pokedex
+      <RouteApp />
     </div>
-  );
+  )
 }
 
 export default App;
