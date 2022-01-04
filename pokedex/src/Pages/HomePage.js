@@ -1,11 +1,11 @@
 import React from "react"
 
-const Pokedex = () => {
+const Home = () => {
     return (
         <div>
-            Pokedex
+            Home
         </div>
     )
 }
 
-export default Pokedex
+export default Home
