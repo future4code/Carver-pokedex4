@@ -4,25 +4,6 @@ import { BASE_URL } from '../Constants/url'
 import styled from 'styled-components'
 import GlobalStateContext from './GlobalStateContext'
 
-export const Spinner = styled.div`  
-border: 4px solid rgba(0,0,0, .1);
-width: 100px;
-height: 100px;
-border-radius: 50%;
-border-left-color: #09f;
-margin-top: 5em;
-margin-left: 7em;  
-animation: spin 1s ease infinite;    
-@keyframes spin {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg)
-    }
-}
-`
-
 const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
