@@ -15,7 +15,7 @@ export default function Router() {
           <Pokedex />
         </Route>
         <Route exact path={"/details/:name"}>
-          <DetailsPokemons></DetailsPokemons>
+          <DetailsPokemons />
         </Route>
       </Switch>
     </BrowserRouter>

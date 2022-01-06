@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router";
-import styled from "styled-components";
-import axios from "axios";
-import PokemonCard from "./PokemonCard";
-import { BASE_URL } from "../Constants/url";
-import GlobalStateContext from "../Context/GlobalStateContext";
+import React, { useState, useEffect, useContext } from "react"
+import { useHistory } from "react-router"
+import styled from "styled-components"
+import PokemonCard from "./PokemonCard"
+import GlobalStateContext from "../Context/GlobalStateContext"
 
-const Container = styled.div``;
+const Container = styled.div``
 
 export const Header = styled.h3`
   /* display: flex;
@@ -14,14 +12,18 @@ export const Header = styled.h3`
   align-items: center;
   background-color : lightblue;
   padding: 10px 40px; */
-`;
-export const BoxProduto = styled.div``;
+`
+export const BoxProduto = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4;
+`
 export const NextBefore = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-`;
+`
 
 export const Spinner = styled.div`
   /* border: 4px solid rgba(0,0,0, .1);
@@ -40,9 +42,9 @@ margin-left: 7em;   */
       transform: rotate(360deg);
     }
   }
-`;
+`
 export default function HomePage() {
-  //rutas pages
+  //rotas
   const history = useHistory();
   const goToPokedex = () => {
     history.push("/pokedex");
