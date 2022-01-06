@@ -1,32 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import { ContainerPokedex, HeaderHome, Title, BotaoMudar, BoxProduto} from '../styled-components/styled'
 import PokemonCard from "./PokemonCard";
 import GlobalStateContext from "../Context/GlobalStateContext";
-
-const Container = styled.div`
-
-`;
-
-export const BoxProduto = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4;
-`;
 
 export default function Pokedex() {
   //Rotas pages =================================
   const history = useHistory();
   const goBack = () => {
-    history.goBack();
-  };
+    history.goBack()
+  }
 
   //Global State ===============================
-  const { state, setter } = useContext(GlobalStateContext);
+  const { state, setter } = useContext(GlobalStateContext)
 
   return (
-    <Container>
-      <button onClick={goBack}>Voltar</button>
+    <ContainerPokedex>
+      <HeaderHome>
+        <Title>
+          Meus pokémon
+        </Title>
+        <BotaoMudar onClick={goBack}>Voltar</BotaoMudar>
+      </HeaderHome>
+      
 
       <BoxProduto>
         {state.pokedex &&
@@ -36,6 +32,6 @@ export default function Pokedex() {
             );
           })}
       </BoxProduto>
-    </Container>
+    </ContainerPokedex>
   );
 }

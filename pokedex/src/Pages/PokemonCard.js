@@ -1,65 +1,7 @@
-import React, { useState, useContext } from "react";
-import styled from "styled-components";
-import { useHistory } from "react-router-dom";
-import GlobalStateContext from "../Context/GlobalStateContext";
-
-export const ProductCard = styled.li`
-  list-style: none;
-  width: 250px;
-  font-family: 'Raleway', sans-serif;
-`
-
-export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  padding: 5px;
-  background-color: #c40000;
-  border-radius: 5%;
-  border: 2px solid black;
-  box-shadow: 10px 10px 5px gray;
-`
-
-export const Picture = styled.img`
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  width: 80%;
-  max-height: 310px;
-  background-color: white;
-  border-radius: 10px;
-  border: 2px solid black;
-`
-
-export const Options = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const BotaoDeEscolha = styled.div`
-  border: 2px solid black;
-  border-radius: 5px;
-  margin: 3px;
-  padding: 5px;
-  background-color: white;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-
-  &:hover {
-  cursor: pointer;
-  background-color: gray;
-}
-`
-
-export const Name = styled.span`
-  display: flex;
-  justify-content: center;
-  font-family: Verdana;
-  color: white;
-`
+import React, { useState, useContext } from "react"
+import { useHistory } from "react-router-dom"
+import GlobalStateContext from "../Context/GlobalStateContext"
+import { ProductCard, Card, Picture, Name, Options, BotaoDeEscolha } from "../styled-components/styled";
 
 const PokemonCard = (props) => {
   //Global States

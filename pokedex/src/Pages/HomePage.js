@@ -1,71 +1,18 @@
 import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router"
-import styled from "styled-components"
 import PokemonCard from "./PokemonCard"
 import GlobalStateContext from "../Context/GlobalStateContext"
-
-const Container = styled.div`
-  font-family: 'Raleway', sans-serif;
-`
-
-export const HeaderHome = styled.div`
-  display: flex;
-  width: 98vw;
-  height: 5vh;
-  background-color: #c40000;
-  justify-content: space-between;
-  align-items: center; 
-`
-
-const Title = styled.h3`
-  margin-left: 100px;
-
-  @media(max-width: 815px) {
-    margin-left: 20px;
-  }
-`
-
-const BotaoMudar = styled.div`
-  margin-right: 20px;
-  border: 2px solid black;
-  padding: 4px;
-  border-radius: 5px;
-  background-color: white;
-
-  &:hover {
-  cursor: pointer;
-  background-color: gray;
-}
-`
-
-export const BoxProduto = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4;
-
-  @media(max-width: 815px) {
-    display: flex;
-    flex-direction: column;
-    margin-left: 15%;
-  }
-`
-export const NextBefore = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`
+import { ContainerPrincipal, HeaderHome, Title, BotaoMudar, BoxProduto, NextBefore } from "../styled-components/styled"
 
 export default function HomePage() {
   //rotas
   const history = useHistory();
   const goToPokedex = () => {
     history.push("/pokedex");
-  };
+  }
+
   //Global State=======================
-  // const { pokemons } = useContext(GlobalStateContext)
-  const { state, setters } = useContext(GlobalStateContext);
-  //===============================================================
+  const { state, setters } = useContext(GlobalStateContext)
 
   const execPrevious = state.previous ? (
     <li className="page-item">
@@ -79,7 +26,8 @@ export default function HomePage() {
     </li>
   ) : (
     ""
-  );
+  )
+
   const execNext = state.next ? (
     <li className="page-item">
       <a
@@ -92,10 +40,10 @@ export default function HomePage() {
     </li>
   ) : (
     ""
-  );
+  )
 
   return (
-    <Container>
+    <ContainerPrincipal>
       <HeaderHome>
         <Title>Pokedex</Title>
         <BotaoMudar onClick={goToPokedex}>Pokedex</BotaoMudar>
@@ -115,6 +63,6 @@ export default function HomePage() {
           </ul>
         </div>
       </NextBefore>
-    </Container>
-  );
+    </ContainerPrincipal>
+  )
 }
