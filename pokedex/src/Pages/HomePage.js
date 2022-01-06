@@ -4,19 +4,50 @@ import styled from "styled-components"
 import PokemonCard from "./PokemonCard"
 import GlobalStateContext from "../Context/GlobalStateContext"
 
-const Container = styled.div``
-
-export const Header = styled.h3`
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color : lightblue;
-  padding: 10px 40px; */
+const Container = styled.div`
+  font-family: 'Raleway', sans-serif;
 `
+
+export const HeaderHome = styled.div`
+  display: flex;
+  width: 98vw;
+  height: 5vh;
+  background-color: #c40000;
+  justify-content: space-between;
+  align-items: center; 
+`
+
+const Title = styled.h3`
+  margin-left: 100px;
+
+  @media(max-width: 815px) {
+    margin-left: 20px;
+  }
+`
+
+const BotaoMudar = styled.div`
+  margin-right: 20px;
+  border: 2px solid black;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: white;
+
+  &:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+`
+
 export const BoxProduto = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 4;
+
+  @media(max-width: 815px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+  }
 `
 export const NextBefore = styled.div`
   display: flex;
@@ -25,24 +56,6 @@ export const NextBefore = styled.div`
   text-align: center;
 `
 
-export const Spinner = styled.div`
-  /* border: 4px solid rgba(0,0,0, .1);
-width: 100px;
-height: 100px; */
-  /* border-radius: 50%;
-border-left-color: #09f;
-margin-top: 5em;
-margin-left: 7em;   */
-  animation: spin 1s ease infinite;
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`
 export default function HomePage() {
   //rotas
   const history = useHistory();
@@ -83,7 +96,11 @@ export default function HomePage() {
 
   return (
     <Container>
-      <button onClick={goToPokedex}>Pokedéx</button>
+      <HeaderHome>
+        <Title>Pokedex</Title>
+        <BotaoMudar onClick={goToPokedex}>Pokedex</BotaoMudar>
+      </HeaderHome>
+      
       <BoxProduto>
         {state.pokemons &&
           state.pokemons.map((pokemon) => {
