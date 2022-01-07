@@ -3,7 +3,6 @@ import { useHistory, useParams } from "react-router-dom"
 import axios from "axios"
 import { BotaoMudar, ContainerPokedex, ImageConteiner, Img, HeaderDetails, Container, ContainerBotoes, Title, ContainerDetails, AreaStats } from "../styled-components/styled"
 
-
 export default function DetailsPokemons() {
   const [stats, setStats] = useState([]);
   const [types, setTypes] = useState([]);
@@ -61,7 +60,7 @@ export default function DetailsPokemons() {
         </ContainerBotoes>        
       </HeaderDetails>
 
-      <ContainerDetails>
+      <ContainerDetails style={{ backgroundImage: `url(${imageFront})`}}>
         <ImageConteiner>
           <Img src={imageFront} />
           <Img src={imageBack} />

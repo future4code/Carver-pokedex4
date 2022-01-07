@@ -12,7 +12,7 @@ export default function Pokedex() {
   }
 
   //Global State ===============================
-  const { state, setter } = useContext(GlobalStateContext)
+  const { state } = useContext(GlobalStateContext)
 
   return (
     <ContainerPokedex>

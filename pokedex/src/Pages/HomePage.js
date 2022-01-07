@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router"
 import PokemonCard from "./PokemonCard"
 import GlobalStateContext from "../Context/GlobalStateContext"
-import { ContainerPrincipal, HeaderHome, Title, BotaoMudar, BoxProduto, NextBefore } from "../styled-components/styled"
+import { ContainerPrincipal, HeaderHome, Title, BotaoMudar, BoxProduto, NextBefore, Pages } from "../styled-components/styled"
 
 export default function HomePage() {
   //rotas
@@ -15,29 +15,29 @@ export default function HomePage() {
   const { state, setters } = useContext(GlobalStateContext)
 
   const execPrevious = state.previous ? (
-    <li className="page-item">
-      <a
+    <div className="page-item">
+      <Pages
         className="page-link"
         onClick={() => setters.getPokemonNames(state.previous)}
         href="#"
       >
-        pagina Anterior
-      </a>
-    </li>
+        Página Anterior
+      </Pages>
+    </div>
   ) : (
     ""
   )
 
   const execNext = state.next ? (
-    <li className="page-item">
-      <a
+    <div className="page-item">
+      <Pages
         className="page-link"
         onClick={() => setters.getPokemonNames(state.next)}
         href="#"
       >
-        Próxima pagina de pokemons
-      </a>
-    </li>
+        Próxima Página
+      </Pages>
+    </div>
   ) : (
     ""
   )

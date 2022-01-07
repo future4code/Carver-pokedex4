@@ -1,7 +1,17 @@
 import styled from "styled-components"
+import background from '../Assets/pokemonposter.png'
 
 export const ContainerPokedex = styled.div`
   font-family: 'Raleway', sans-serif;
+  background-image: url(${background});
+  background-size: 110%;
+  background-position: center center;
+  height: 100vh;
+
+  @media(max-width: 815px) {
+    background-size: 250%;
+    background-position: center center;
+  }
 `
 
 export const HeaderHome = styled.div`
@@ -31,6 +41,7 @@ export const BotaoMudar = styled.div`
   &:hover {
   cursor: pointer;
   background-color: gray;
+  color: white;
 }
 `
 
@@ -42,8 +53,14 @@ export const BoxProduto = styled.div`
   @media(max-width: 815px) {
     display: flex;
     flex-direction: column;
-    margin-left: 15%;
+    margin-left: 15%; 
+    background-size: 250%;
+    background-position: center center;
   }
+`
+
+export const BoxPokedex = styled.div`
+  height: 97vh;
 `
 
 export const Container = styled.main`
@@ -60,9 +77,11 @@ export const ImageConteiner = styled.div`
 `
 export const Img = styled.img`
   height: 15vh;
-  background-color: lightblue;
+  background-color: whitesmoke;
+  opacity: 0.95;
   border: 2px solid black;
   border-radius: 5px;
+  margin: 10px;
 `
 
 export const ProductCard = styled.li`
@@ -113,6 +132,7 @@ export const BotaoDeEscolha = styled.div`
   &:hover {
   cursor: pointer;
   background-color: gray;
+  color: white;
 }
 `
 
@@ -125,11 +145,18 @@ export const Name = styled.span`
 
 export const ContainerPrincipal = styled.div`
   font-family: 'Raleway', sans-serif;
+  background-image: url(${background});
+  background-size: 110%;
+  background-position: center center;
+
+  @media(max-width: 815px) {
+    background-size: 250%;
+    background-position: center center;
+  }
 `
 
 export const NextBefore = styled.div`
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
 `
@@ -155,9 +182,13 @@ export const ContainerDetails = styled.div`
     margin: 5px;
     padding: 5px;
     width: 97vw;
+    background-color: #c40000;
+    background-size: 4%;
+    color: white;
 
     @media(max-width: 815px) {
     width: 90vw;
+    background-size: 20%;
   }
 `
 
@@ -165,8 +196,30 @@ export const AreaStats = styled.div`
     display: flex;
     justify-content: space-around;
     margin-bottom: 5px;
+    border: 2px solid black;
+    background-color: white;
+    opacity: 0.8;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
 
     @media(max-width: 815px) {
     flex-direction: column;
   }
+`
+
+export const Pages = styled.div`
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  background-color: white;
+  
+  &:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
 `
