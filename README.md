@@ -3,7 +3,7 @@
 ### Nome dos integrantes
 
 - Riclecio Ferreira Maia
-- Robson Fernando ferreira dos Santos
+- Robson Fernando Ferreira dos Santos
 
 ### Link do website
 [Carver Pokedex](carver-pokedex4.surge.sh)
