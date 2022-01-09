@@ -33,5 +33,6 @@ Nesse projeto utilizamos as seguintes ferramentas:
 
 * React
 * Javascript
-* Postman
+* Axios
 * CSS (styled-components)
+* Poke API
